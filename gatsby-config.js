@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: "/cars",
   plugins: [
     {
       resolve: `gatsby-source-wordpress`,
