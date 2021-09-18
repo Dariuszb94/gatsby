@@ -1,0 +1,1 @@
+{"version":3,"file":"component---src-templates-post-js-6ff1eff4e4bb8fbfa172.js","mappings":"0JAMA,UAJe,WACb,OAAO","sources":["webpack://gatsby-starter-default/./src/templates/post.js"],"sourcesContent":["import React from \"react\"\n\nconst WpPost = () => {\n  return <h1></h1>\n}\n\nexport default WpPost\n"],"names":[],"sourceRoot":""}
