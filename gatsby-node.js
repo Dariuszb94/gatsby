@@ -1,38 +1,30 @@
-const path = require(`path`)
-const { slash } = require(`gatsby-core-utils`)
-
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-
-  // query content for WordPress posts
-  const {
-    data: {
-      allWpPost: { nodes: allPosts },
-    },
-  } = await graphql(`
-    query {
+xports.createPages = async ({ actions, graphql, reporter }) => {
+  const result = await graphql(`
+    {
       allWpPost {
         nodes {
+          __typename
           id
+          databaseId
           uri
         }
       }
     }
   `)
 
-  const postTemplate = path.resolve(`./src/templates/post.js`)
+  if (result.errors) {
+    reporter.error("There was an error fetching posts", result.errors)
+  }
 
-  allPosts.forEach(post => {
-    createPage({
-      // will be the url for the page
+  const { allWpPost } = result.data
+
+  let template = require.resolve(`./src/templates/WpPost.js`)
+
+  allWpPost.nodes.map(post => {
+    actions.createPage({
       path: post.uri,
-      // specify the component template of your choice
-      component: slash(postTemplate),
-      // In the ^template's GraphQL query, 'id' will be available
-      // as a GraphQL variable to query for this post's data.
-      context: {
-        id: post.id,
-      },
+      component: template,
+      context: post,
     })
   })
 }

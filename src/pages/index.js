@@ -31,7 +31,7 @@ const HomePage = () => {
               <div dangerouslySetInnerHTML={{ __html: excerpt }} />
             </Text>
             <Link as={GatsbyLink} to={uri}>
-              Read More >>
+              Read More {">>"}
             </Link>
           </Box>
         ))}
