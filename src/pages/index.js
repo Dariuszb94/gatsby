@@ -1,26 +1,43 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import { Link as GatsbyLink } from "gatsby"
+import { Container, Stack, Box, Heading, Text, Link } from "@chakra-ui/react"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+const HomePage = () => {
+  // const data = useStaticQuery(graphql`
+  //   {
+  //     allWpPost {
+  //       nodes {
+  //         id
+  //         title
+  //         excerpt
+  //         uri
+  //       }
+  //     }
+  //   }
+  // `)
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["auto", "webp", "avif"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-  </Layout>
-)
+  // const { allWpPost } = data
 
-export default IndexPage
+  return (
+    <Container maxW="xl" centerContent>
+      <Heading as={`h1`} m={4}>
+        #100DaysOfGatsby
+      </Heading>
+      <Stack spacing={8}>
+        {allWpPost.nodes.map(({ id, title, excerpt, uri }) => (
+          <Box key={id} p={5} shadow="md" borderWidth="1px">
+            <Heading as={`h2`}>{title}</Heading>
+            <Text as="div" mt={4}>
+              <div dangerouslySetInnerHTML={{ __html: excerpt }} />
+            </Text>
+            <Link as={GatsbyLink} to={uri}>
+              Read More >>
+            </Link>
+          </Box>
+        ))}
+      </Stack>
+    </Container>
+  )
+}
+
+export default HomePage
