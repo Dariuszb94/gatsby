@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@chakra-ui/react": "^1.6.7",
     "gatsby": "^3.13.0",
     "gatsby-core-utils": "^2.13.0",
     "gatsby-plugin-image": "^1.13.0",
@@ -30,6 +31,7 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
+    "kill": "kill-port --port 8000",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "gatsby develop",
