@@ -1,7 +1,8 @@
 import * as React from "react"
 import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby"
-import { Container, Stack, Box, Heading, Text, Link } from "@chakra-ui/react"
-import { Header } from "../layout/layoutComponents/header"
+import { Header } from "../layout/header"
+import * as indexStyles from "./index.module.css"
+
 const HomePage = () => {
   const data = useStaticQuery(graphql`
     {
@@ -19,22 +20,20 @@ const HomePage = () => {
   const { allWpPost } = data
 
   return (
-    <Container maxW="xl" centerContent>
+    <main className={indexStyles.container}>
       <Header />
-      <Stack spacing={8}>
+      <section>
         {allWpPost.nodes.map(({ id, title, excerpt, uri }) => (
-          <Box key={id} p={5} shadow="md" borderWidth="1px">
-            <Heading as={`h2`}>{title}</Heading>
-            <Text as="div" mt={4}>
+          <article key={id}>
+            <h1>{title}</h1>
+            <div>
               <div dangerouslySetInnerHTML={{ __html: excerpt }} />
-            </Text>
-            <Link as={GatsbyLink} to={uri}>
-              Read More {">>"}
-            </Link>
-          </Box>
+            </div>
+            <GatsbyLink to={uri}>Read More {">>"}</GatsbyLink>
+          </article>
         ))}
-      </Stack>
-    </Container>
+      </section>
+    </main>
   )
 }
 

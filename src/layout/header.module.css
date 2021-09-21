@@ -1,0 +1,13 @@
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.link {
+  text-decoration: none;
+  color: black;
+}
+.element {
+  margin-right: 8px;
+}

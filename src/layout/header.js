@@ -1,5 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby"
+import * as headerStyles from "./header.module.css"
+
 export const Header = () => {
   const data = useStaticQuery(graphql`
     {
@@ -14,21 +16,21 @@ export const Header = () => {
     }
   `)
 
-  console.log(data.wpMenu?.menuItems.nodes)
   return (
-    <section>
-      aaaaaa
+    <header>
       <nav>
-        <ul>
+        <ul className={headerStyles.menu}>
           {data.wpMenu?.menuItems.nodes.map(item => {
             return (
-              <li>
-                <a href={item.url}>{item.label}</a>
+              <li className={headerStyles.element}>
+                <a className={headerStyles.link} href={item.url}>
+                  {item.label}
+                </a>
               </li>
             )
           })}
         </ul>
       </nav>
-    </section>
+    </header>
   )
 }
