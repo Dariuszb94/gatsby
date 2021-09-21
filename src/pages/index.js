@@ -1,7 +1,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby"
 import { Container, Stack, Box, Heading, Text, Link } from "@chakra-ui/react"
-import { Header } from "../layout/header"
+import { Header } from "../layout/layoutComponents/header"
 const HomePage = () => {
   const data = useStaticQuery(graphql`
     {
