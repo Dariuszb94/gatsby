@@ -17,7 +17,7 @@ export const Header = () => {
   `)
 
   return (
-    <header>
+    <header className={headerStyles.container}>
       <nav>
         <ul className={headerStyles.menu}>
           {data.wpMenu?.menuItems.nodes.map(item => {
