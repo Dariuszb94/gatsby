@@ -2,6 +2,7 @@ import * as React from "react"
 import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby"
 import { Header } from "../layout/header"
 import * as indexStyles from "./index.module.css"
+import "@fontsource/roboto" // Defaults to weight 400.
 
 const HomePage = () => {
   const data = useStaticQuery(graphql`
