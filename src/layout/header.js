@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby"
+import Logo from "./logo"
 import * as headerStyles from "./header.module.css"
 
 export const Header = () => {
@@ -18,6 +19,9 @@ export const Header = () => {
 
   return (
     <header className={headerStyles.container}>
+      <a href="/">
+        <Logo />
+      </a>
       <nav>
         <ul className={headerStyles.menu}>
           {data.wpMenu?.menuItems.nodes.map(item => {

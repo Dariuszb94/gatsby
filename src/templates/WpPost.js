@@ -1,5 +1,4 @@
 import React from "react"
-import { Container, Heading, Link, Text } from "@chakra-ui/react"
 import { graphql, Link as GatsbyLink } from "gatsby"
 import { Helmet } from "react-helmet/es/Helmet"
 
@@ -10,15 +9,13 @@ const WpPost = ({ data }) => {
       <Helmet>
         <meta name="description" content={wpPost?.seo?.metaDesc} />
       </Helmet>
-      <Container maxW="xl" centerContent>
-        <Heading as={`h1`} m={4}>
-          {wpPost.title}
-        </Heading>
-        <Text as={"div"} mt={4} mb={10}>
+      <div>
+        <h1>{wpPost.title}</h1>
+        <div>
           <div dangerouslySetInnerHTML={{ __html: wpPost.content }} />
-        </Text>
-        <Link as={GatsbyLink} to="/">{`<< Back to Blog`}</Link>
-      </Container>
+        </div>
+        <GatsbyLink to="/">{`<< Back to Blog`}</GatsbyLink>
+      </div>
     </>
   )
 }

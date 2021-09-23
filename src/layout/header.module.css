@@ -11,6 +11,36 @@
 .element {
   margin-right: 8px;
 }
+.element:nth-child(even) {
+  animation: slide-down 1.5s ease-in-out;
+}
+.element:nth-child(odd) {
+  animation: slide-up 1.5s ease-in-out;
+}
 .container {
   padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
