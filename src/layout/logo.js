@@ -41,7 +41,6 @@ const Part = ({ color, d, toggle }) => {
 
 const Star = () => {
   const [toggle, setToggle] = useState(false)
-
   useEffect(() => {
     setTimeout(() => {
       setToggle(true)
