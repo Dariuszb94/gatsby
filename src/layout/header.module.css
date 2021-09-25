@@ -18,15 +18,17 @@
   animation: slide-up 1.5s ease-in-out;
 }
 .container {
+  background-color: rgb(189, 184, 184);
+  padding: 0 20px;
+  width: 100%;
+}
+.content {
+  margin: 0 auto;
+  max-width: 1200px;
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(189, 184, 184);
-  padding: 0 20px;
-  margin: 0 auto;
-  max-width: 1200px;
-  width: 100%;
 }
 @keyframes slide-up {
   0% {

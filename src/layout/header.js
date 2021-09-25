@@ -19,22 +19,24 @@ export const Header = () => {
 
   return (
     <header className={headerStyles.container}>
-      <a href="/">
-        <Logo />
-      </a>
-      <nav>
-        <ul className={headerStyles.menu}>
-          {data.wpMenu?.menuItems.nodes.map(item => {
-            return (
-              <li className={headerStyles.element}>
-                <a className={headerStyles.link} href={item.url}>
-                  {item.label}
-                </a>
-              </li>
-            )
-          })}
-        </ul>
-      </nav>
+      <div className={headerStyles.content}>
+        <a href="/">
+          <Logo />
+        </a>
+        <nav>
+          <ul className={headerStyles.menu}>
+            {data.wpMenu?.menuItems.nodes.map(item => {
+              return (
+                <li className={headerStyles.element}>
+                  <a className={headerStyles.link} href={item.url}>
+                    {item.label}
+                  </a>
+                </li>
+              )
+            })}
+          </ul>
+        </nav>
+      </div>
     </header>
   )
 }
