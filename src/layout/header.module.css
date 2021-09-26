@@ -21,6 +21,8 @@
   background-color: rgb(189, 184, 184);
   padding: 0 20px;
   width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 .content {
   margin: 0 auto;
@@ -29,6 +31,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.wave {
+  position: absolute;
+  left: 0;
+  top: 6rem;
+  width: 200%;
+  animation: wave linear 3s infinite;
+}
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 @keyframes slide-up {
   0% {
