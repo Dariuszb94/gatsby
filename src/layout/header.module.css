@@ -17,8 +17,9 @@
 .element:nth-child(odd) {
   animation: slide-up 1.5s ease-in-out;
 }
+
 .container {
-  background-color: rgb(189, 184, 184);
+  background-color: #e5e5e5;
   padding: 0 20px;
   width: 100%;
   position: relative;
@@ -27,7 +28,7 @@
 .content {
   margin: 0 auto;
   max-width: 1200px;
-  padding: 20px 0;
+  padding: 24px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,7 +36,7 @@
 .wave {
   position: absolute;
   left: 0;
-  top: 6rem;
+  top: calc(100% - 24px);
   width: 200%;
   animation: wave linear 3s infinite;
 }
