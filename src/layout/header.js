@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Logo from "./logo"
 import * as headerStyles from "./header.module.css"
 
