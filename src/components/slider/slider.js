@@ -5,7 +5,7 @@ const Slider = () => {
   return (
     <Carousel>
       <div>
-        <img src="assets/1.jpeg" />
+        <img src="../" />
         <p className="legend">Legend 1</p>
       </div>
       <div>
