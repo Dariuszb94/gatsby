@@ -2,8 +2,9 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Logo from "./logo"
 import * as headerStyles from "./header.module.css"
-
+import useCurrentWidth from "../hooks/useCurrentWidth"
 export const Header = () => {
+  let width = useCurrentWidth()
   const data = useStaticQuery(graphql`
     {
       wpMenu(name: { eq: "Main Navigation" }) {
@@ -19,6 +20,7 @@ export const Header = () => {
 
   return (
     <header className={headerStyles.container}>
+      {width}
       <svg
         className={headerStyles.wave}
         viewBox="0 0 99 5"
@@ -35,6 +37,7 @@ export const Header = () => {
         <a href="/">
           <Logo />
         </a>
+
         <nav>
           <ul className={headerStyles.menu}>
             {data.wpMenu?.menuItems.nodes.map(item => {

@@ -1,7 +1,7 @@
 // import { useSpring, animated } from "react-spring"
 // import { useState, useEffect } from "react"
 // import React from "react"
-// import * as logoStyles from "./logo.module.css"
+import * as logoStyles from "./logo.module.css"
 // const useAnimatedPath = ({ toggle }) => {
 //   const [length, setLength] = useState(null)
 //   const animatedStyle = useSpring({
@@ -71,7 +71,7 @@
 import React from "react"
 import LogoImg from "../images/demo-logo.png"
 const Logo = () => {
-  return <img src={LogoImg} alt="Demo Logo" />
+  return <img className={logoStyles.logo} src={LogoImg} alt="Demo Logo" />
 }
 
 export default Logo
