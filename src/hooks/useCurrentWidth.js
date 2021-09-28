@@ -3,9 +3,11 @@ const isBrowser = typeof window !== "undefined"
 
 const getWidth = () => {
   if (isBrowser) {
-    window.innerWidth ||
+    return (
+      window.innerWidth ||
       document.documentElement.clientWidth ||
       document.body.clientWidth
+    )
   }
 }
 function useCurrentWidth() {
