@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react"
+const isBrowser = typeof window !== "undefined"
 
-const getWidth = () =>
-  window.innerWidth ||
-  document.documentElement.clientWidth ||
-  document.body.clientWidth
-
+const getWidth = () => {
+  if (isBrowser) {
+    window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth
+  }
+}
 function useCurrentWidth() {
   // save current window width in the state object
+
   let [width, setWidth] = useState(getWidth())
 
   // in this case useEffect will execute only once because
