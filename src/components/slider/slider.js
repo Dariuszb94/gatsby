@@ -7,7 +7,7 @@ import Img3 from "../../images/office_people.jpg"
 
 const Slider = () => {
   return (
-    <Carousel showThumbs={false}>
+    <Carousel showThumbs={false} showStatus={false}>
       <div>
         <img src={Img1} />
       </div>
