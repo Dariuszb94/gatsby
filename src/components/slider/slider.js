@@ -1,20 +1,21 @@
 import React from "react"
 import "react-responsive-carousel/lib/styles/carousel.min.css" // requires a loader
 import { Carousel } from "react-responsive-carousel"
+import Img1 from "../../images/office.jpg"
+import Img2 from "../../images/office_laptop.jpg"
+import Img3 from "../../images/office_people.jpg"
+
 const Slider = () => {
   return (
-    <Carousel>
+    <Carousel showThumbs={false}>
       <div>
-        <img src="../" />
-        <p className="legend">Legend 1</p>
+        <img src={Img1} />
       </div>
       <div>
-        <img src="assets/2.jpeg" />
-        <p className="legend">Legend 2</p>
+        <img src={Img2} />
       </div>
       <div>
-        <img src="assets/3.jpeg" />
-        <p className="legend">Legend 3</p>
+        <img src={Img3} />
       </div>
     </Carousel>
   )
