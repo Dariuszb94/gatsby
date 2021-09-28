@@ -3,7 +3,11 @@ import { useStaticQuery, graphql } from "gatsby"
 import Logo from "./logo"
 import * as headerStyles from "./header.module.css"
 import useCurrentWidth from "../hooks/useCurrentWidth"
+import { useState, useEffect } from "react"
 export const Header = () => {
+  const [mobile, setMobile] = useState(false)
+  const [showMenu, setShowMenu] = useState(false)
+
   let width = useCurrentWidth()
   const data = useStaticQuery(graphql`
     {
@@ -17,10 +21,11 @@ export const Header = () => {
       }
     }
   `)
-
+  useEffect(() => {
+    width > 1000 ? setMobile(false) : setMobile(true)
+  }, [width])
   return (
     <header className={headerStyles.container}>
-      {width}
       <svg
         className={headerStyles.wave}
         viewBox="0 0 99 5"
@@ -37,20 +42,73 @@ export const Header = () => {
         <a href="/">
           <Logo />
         </a>
-
-        <nav>
-          <ul className={headerStyles.menu}>
-            {data.wpMenu?.menuItems.nodes.map(item => {
-              return (
-                <li className={headerStyles.element}>
-                  <a className={headerStyles.link} href={item.url}>
-                    {item.label}
-                  </a>
-                </li>
-              )
-            })}
-          </ul>
-        </nav>
+        {mobile ? (
+          <>
+            <svg
+              onClick={() => setShowMenu(prev => !prev)}
+              className={
+                showMenu ? headerStyles.burgerActive : headerStyles.burger
+              }
+              width="44"
+              height="27"
+              viewBox="0 0 44 27"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.00001 23.6008L41.4613 23.6008"
+                stroke="black"
+                stroke-width="5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M3.00001 13.6008L41.4613 13.6008"
+                stroke="black"
+                stroke-width="5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M3.00001 3.60082L41.4613 3.60083"
+                stroke="black"
+                stroke-width="5"
+                stroke-linecap="round"
+              />
+            </svg>
+            <nav
+              className={
+                showMenu
+                  ? headerStyles.menuMobileContainer
+                  : headerStyles.menuMobileContainerHidden
+              }
+            >
+              <ul className={headerStyles.menu}>
+                {data.wpMenu?.menuItems.nodes.map(item => {
+                  return (
+                    <li className={headerStyles.element}>
+                      <a className={headerStyles.link} href={item.url}>
+                        {item.label}
+                      </a>
+                    </li>
+                  )
+                })}
+              </ul>
+            </nav>
+          </>
+        ) : (
+          <nav>
+            <ul className={headerStyles.menu}>
+              {data.wpMenu?.menuItems.nodes.map(item => {
+                return (
+                  <li className={headerStyles.element}>
+                    <a className={headerStyles.link} href={item.url}>
+                      {item.label}
+                    </a>
+                  </li>
+                )
+              })}
+            </ul>
+          </nav>
+        )}
       </div>
     </header>
   )
