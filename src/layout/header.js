@@ -59,19 +59,19 @@ export const Header = () => {
                 d="M3.00001 23.6008L41.4613 23.6008"
                 stroke="black"
                 strokeWidth="5"
-                stroke-linecap="round"
+                strokeLinecap="round"
               />
               <path
                 d="M3.00001 13.6008L41.4613 13.6008"
                 stroke="black"
                 strokeWidth="5"
-                stroke-linecap="round"
+                strokeLinecap="round"
               />
               <path
                 d="M3.00001 3.60082L41.4613 3.60083"
                 stroke="black"
                 strokeWidth="5"
-                stroke-linecap="round"
+                strokeLinecap="round"
               />
             </svg>
             <nav
