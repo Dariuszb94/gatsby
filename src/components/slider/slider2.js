@@ -22,13 +22,13 @@ const Slider = () => {
     <>
       <Swiper navigation={true} className="mySwiper">
         <SwiperSlide>
-          <StaticImage src={Img1} alt="A dinosaur" />
+          <StaticImage src="../../images/office.jpg" alt="A dinosaur" />
         </SwiperSlide>
         <SwiperSlide>
           <StaticImage src="../../images/office_laptop.jpg" alt="A dinosaur" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={Img3} />
+          <StaticImage src="../../images/office_people.jpg" alt="A dinosaur" />
         </SwiperSlide>
       </Swiper>
     </>
