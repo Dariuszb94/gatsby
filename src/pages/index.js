@@ -26,7 +26,7 @@ const HomePage = () => {
     <main className={indexStyles.container}>
       <Header />
       <Slider2 />
-      <Slider />
+      {/* <Slider /> */}
       <section>
         {allWpPost.nodes.map(({ id, title, excerpt, uri }) => (
           <article key={id}>
