@@ -4,6 +4,8 @@ import { Header } from "../layout/header"
 import * as indexStyles from "./index.module.css"
 import "@fontsource/roboto" // Defaults to weight 400.
 import Slider from "../components/slider/slider"
+import Slider2 from "../components/slider/slider2"
+
 const HomePage = () => {
   const data = useStaticQuery(graphql`
     {
@@ -23,6 +25,7 @@ const HomePage = () => {
   return (
     <main className={indexStyles.container}>
       <Header />
+      <Slider2 />
       <Slider />
       <section>
         {allWpPost.nodes.map(({ id, title, excerpt, uri }) => (
