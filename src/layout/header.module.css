@@ -67,7 +67,7 @@
   cursor: pointer;
   position: fixed;
   right: 20px;
-  z-index: 2;
+  z-index: 3;
 }
 .burgerActive path {
   stroke: white;
