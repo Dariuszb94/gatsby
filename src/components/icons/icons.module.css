@@ -5,15 +5,28 @@
 }
 .caption {
   font-size: 3rem;
+  margin-bottom: 40px;
 }
 .iconsGrid {
-  padding: 100px 20px;
+  padding: 40px 20px;
 }
 
 .iconsGridInner {
   display: flex;
-  margin: 0 auto;
-  max-width: 1200px;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+}
+@media screen and (min-width: 800px) {
+  .iconsGridInner {
+    flex-direction: row;
+    margin: 0 auto;
+    max-width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .caption {
+    margin-bottom: 0;
+  }
+  .iconsGrid {
+    padding: 100px 20px;
+  }
 }
