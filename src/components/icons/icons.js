@@ -1,6 +1,7 @@
 import { useSpring, animated } from "react-spring"
 import { useState, useEffect } from "react"
 import React from "react"
+import * as iconsStyles from "./icons.module.css"
 
 const useAnimatedPath = ({ toggle }) => {
   const [length, setLength] = useState(null)
@@ -48,7 +49,7 @@ const Icons = () => {
   }, [])
 
   return (
-    <div className={logoStyles.iconContainer}>
+    <div className={iconsStyles.iconContainer}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="60"
