@@ -1,9 +1,7 @@
-import React, { useRef, useState } from "react"
+import React from "react"
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react"
-import Img1 from "../../images/office.jpg"
-import Img2 from "../../images/office_laptop.jpg"
-import Img3 from "../../images/office_people.jpg"
+
 // Import Swiper styles
 import "swiper/css"
 import "swiper/css/navigation"
