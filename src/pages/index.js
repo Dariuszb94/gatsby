@@ -4,7 +4,7 @@ import { Header } from "../layout/header"
 import * as indexStyles from "./index.module.css"
 import "@fontsource/roboto" // Defaults to weight 400.
 import Slider from "../components/slider/slider"
-import Icons from "../components/icons/icons"
+import Icons from "../components/icons/star"
 const HomePage = () => {
   const data = useStaticQuery(graphql`
     {
@@ -27,7 +27,7 @@ const HomePage = () => {
       <Slider />
       <Icons />
       <section>
-        {allWpPost.nodes.map(({ id, title, excerpt, uri }) => (
+        {/* {allWpPost.nodes.map(({ id, title, excerpt, uri }) => (
           <article key={id}>
             <h1>{title}</h1>
             <div>
@@ -35,7 +35,7 @@ const HomePage = () => {
             </div>
             <GatsbyLink to={uri}>Read More {">>"}</GatsbyLink>
           </article>
-        ))}
+        ))} */}
       </section>
     </main>
   )
