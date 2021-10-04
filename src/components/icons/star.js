@@ -40,7 +40,7 @@ const Part = ({ color, d, toggle }) => {
   )
 }
 
-const Icons = ({ isVisible }) => {
+const Icons = () => {
   const [toggle, setToggle] = useState(false)
   useEffect(() => {
     setTimeout(() => {
@@ -64,6 +64,7 @@ const Icons = ({ isVisible }) => {
           stroke="black"
         />
       </svg>
+      <div className={iconsStyles.caption}>High Quality</div>
     </div>
   )
 }

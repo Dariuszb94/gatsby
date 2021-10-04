@@ -1,11 +1,21 @@
 import React from "react"
 import Star from "./star"
 import { useInView } from "react-intersection-observer"
+import * as iconsStyles from "./icons.module.css"
 
-function Icons() {
+const Icons = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+  })
   return (
-    <section>
-      <Star />
+    <section ref={ref} className={iconsStyles.iconsGrid}>
+      {inView && (
+        <>
+          <Star />
+          <Star />
+          <Star />
+        </>
+      )}
     </section>
   )
 }
