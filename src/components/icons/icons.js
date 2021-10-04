@@ -1,6 +1,7 @@
 import React from "react"
 import Star from "./star"
-import Thunder from "./Thunder"
+import RWD from "./rwd"
+import Speed from "./speed"
 
 import { useInView } from "react-intersection-observer"
 import * as iconsStyles from "./icons.module.css"
@@ -15,8 +16,8 @@ const Icons = () => {
         {inView && (
           <>
             <Star />
-            <Thunder />
-            <Star />
+            <RWD />
+            <Speed />
           </>
         )}
       </div>
