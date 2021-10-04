@@ -1,5 +1,7 @@
 import React from "react"
 import Star from "./star"
+import Thunder from "./Thunder"
+
 import { useInView } from "react-intersection-observer"
 import * as iconsStyles from "./icons.module.css"
 
@@ -13,7 +15,7 @@ const Icons = () => {
         {inView && (
           <>
             <Star />
-            <Star />
+            <Thunder />
             <Star />
           </>
         )}
