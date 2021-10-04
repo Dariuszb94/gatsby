@@ -4,7 +4,7 @@ import { Header } from "../layout/header"
 import * as indexStyles from "./index.module.css"
 import "@fontsource/roboto" // Defaults to weight 400.
 import Slider from "../components/slider/slider"
-import Icons from "../components/icons/star"
+import Icons from "../components/icons/icons"
 const HomePage = () => {
   const data = useStaticQuery(graphql`
     {
