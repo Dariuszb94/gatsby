@@ -53,7 +53,7 @@ const Icons = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="36"
-        height="120"
+        height="84"
         fill="none"
         viewBox="0 0 70 120"
       >

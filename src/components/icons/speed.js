@@ -53,7 +53,7 @@ const Icons = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="60"
-        height="114"
+        height="84"
         fill="none"
         viewBox="0 0 105 114"
       >
@@ -64,7 +64,7 @@ const Icons = () => {
           stroke="black"
         />
       </svg>
-      <div className={iconsStyles.caption}>Fast</div>
+      <div className={iconsStyles.caption}>Lighting Fast</div>
     </div>
   )
 }
