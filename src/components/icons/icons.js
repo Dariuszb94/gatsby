@@ -9,13 +9,15 @@ const Icons = () => {
   })
   return (
     <section ref={ref} className={iconsStyles.iconsGrid}>
-      {inView && (
-        <>
-          <Star />
-          <Star />
-          <Star />
-        </>
-      )}
+      <div className={iconsStyles.iconsGridInner}>
+        {inView && (
+          <>
+            <Star />
+            <Star />
+            <Star />
+          </>
+        )}
+      </div>
     </section>
   )
 }
