@@ -1,23 +1,35 @@
 import React from "react"
-import "react-responsive-carousel/lib/styles/carousel.min.css" // requires a loader
-import { Carousel } from "react-responsive-carousel"
-import Img1 from "../../images/office.jpg"
-import Img2 from "../../images/office_laptop.jpg"
-import Img3 from "../../images/office_people.jpg"
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react"
+
+// Import Swiper styles
+import "swiper/css"
+import "swiper/css/navigation"
+import { StaticImage } from "gatsby-plugin-image"
+
+import "./styles.css"
+
+// import Swiper core and required modules
+import SwiperCore, { Navigation } from "swiper"
+
+// install Swiper modules
+SwiperCore.use([Navigation])
 
 const Slider = () => {
   return (
-    <Carousel showThumbs={false} showStatus={false}>
-      <div>
-        <img src={Img1} />
-      </div>
-      <div>
-        <img src={Img2} />
-      </div>
-      <div>
-        <img src={Img3} />
-      </div>
-    </Carousel>
+    <>
+      <Swiper navigation={true} className="mySwiper">
+        <SwiperSlide>
+          <StaticImage src="../../images/office.jpg" alt="A dinosaur" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <StaticImage src="../../images/office_laptop.jpg" alt="A dinosaur" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <StaticImage src="../../images/office_people.jpg" alt="A dinosaur" />
+        </SwiperSlide>
+      </Swiper>
+    </>
   )
 }
 
