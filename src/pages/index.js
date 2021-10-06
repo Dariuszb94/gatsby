@@ -26,17 +26,7 @@ const HomePage = () => {
       <Header />
       <Slider />
       <Icons />
-      <section>
-        {/* {allWpPost.nodes.map(({ id, title, excerpt, uri }) => (
-          <article key={id}>
-            <h1>{title}</h1>
-            <div>
-              <div dangerouslySetInnerHTML={{ __html: excerpt }} />
-            </div>
-            <GatsbyLink to={uri}>Read More {">>"}</GatsbyLink>
-          </article>
-        ))} */}
-      </section>
+      <section></section>
     </main>
   )
 }
