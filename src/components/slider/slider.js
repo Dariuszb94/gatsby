@@ -7,7 +7,7 @@ import "swiper/css"
 import "swiper/css/navigation"
 import { StaticImage } from "gatsby-plugin-image"
 
-import "./styles.css"
+import "./swiper.css"
 
 // import Swiper core and required modules
 import SwiperCore, { Navigation } from "swiper"
