@@ -12,6 +12,7 @@ const Icons = () => {
   })
   return (
     <section ref={ref} className={iconsStyles.iconsGrid}>
+      <h2 className={iconsStyles.header}>Check this out!</h2>
       <div className={iconsStyles.iconsGridInner}>
         {inView && (
           <>

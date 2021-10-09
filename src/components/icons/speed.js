@@ -64,7 +64,7 @@ const Icons = () => {
           stroke="black"
         />
       </svg>
-      <div className={iconsStyles.caption}>Lighting Fast</div>
+      <h3 className={iconsStyles.caption}>Lighting Fast</h3>
       <div className={iconsStyles.text}>
         Maecenas nisl sem, molestie sit amet felis ut, viverra euismod odio.
         Nunc velit massa, aliquet vel tristique at, posuere ac risus.

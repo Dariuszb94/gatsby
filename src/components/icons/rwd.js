@@ -64,7 +64,7 @@ const Icons = () => {
           stroke="black"
         />
       </svg>
-      <div className={iconsStyles.caption}>RWD</div>
+      <h3 className={iconsStyles.caption}>RWD</h3>
       <div className={iconsStyles.text}>
         Pellentesque ac pellentesque mi. Ut malesuada justo at neque fermentum
         maximus. Suspendisse viverra erat in aliquet sollicitudin. In orci

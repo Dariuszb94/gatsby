@@ -5,6 +5,14 @@ body {
 html {
   font-size: 9px;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
 @media screen and (min-width: 800px) {
   html {
     font-size: 10px;

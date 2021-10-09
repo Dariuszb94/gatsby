@@ -64,7 +64,7 @@ const Icons = () => {
           stroke="black"
         />
       </svg>
-      <div className={iconsStyles.caption}>High Quality</div>
+      <h3 className={iconsStyles.caption}>High Quality</h3>
       <div className={iconsStyles.text}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
         accumsan fringilla augue, ac dictum odio aliquet vel. Ut hendrerit
