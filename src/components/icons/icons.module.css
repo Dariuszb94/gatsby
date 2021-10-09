@@ -2,10 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 40px;
+  max-width: 250px;
 }
 .caption {
   font-size: 3rem;
-  margin-bottom: 40px;
+}
+.text {
+  font-size: 1.6rem;
+  text-align: center;
 }
 .iconsGrid {
   padding: 40px 20px;
@@ -14,6 +19,7 @@
 .iconsGridInner {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 @media screen and (min-width: 800px) {
   .iconsGridInner {
@@ -28,5 +34,11 @@
   }
   .iconsGrid {
     padding: 100px 20px;
+  }
+  .iconContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
   }
 }
