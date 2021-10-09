@@ -65,6 +65,11 @@ const Icons = () => {
         />
       </svg>
       <div className={iconsStyles.caption}>High Quality</div>
+      <div className={iconsStyles.text}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+        accumsan fringilla augue, ac dictum odio aliquet vel. Ut hendrerit
+        porttitor turpis, a vehicula odio sagittis at.
+      </div>
     </div>
   )
 }

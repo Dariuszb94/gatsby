@@ -65,6 +65,10 @@ const Icons = () => {
         />
       </svg>
       <div className={iconsStyles.caption}>Lighting Fast</div>
+      <div className={iconsStyles.text}>
+        Maecenas nisl sem, molestie sit amet felis ut, viverra euismod odio.
+        Nunc velit massa, aliquet vel tristique at, posuere ac risus.
+      </div>
     </div>
   )
 }

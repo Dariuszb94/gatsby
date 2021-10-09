@@ -65,6 +65,11 @@ const Icons = () => {
         />
       </svg>
       <div className={iconsStyles.caption}>RWD</div>
+      <div className={iconsStyles.text}>
+        Pellentesque ac pellentesque mi. Ut malesuada justo at neque fermentum
+        maximus. Suspendisse viverra erat in aliquet sollicitudin. In orci
+        nulla, elementum in diam eu, tincidunt aliquet lacus.
+      </div>
     </div>
   )
 }
