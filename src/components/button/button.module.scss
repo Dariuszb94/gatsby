@@ -3,14 +3,20 @@
   --clr-bg: white;
 }
 .container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  padding: 0 20px;
+}
+@media screen and (min-width: 800px) {
+  .container {
+    padding: 0 20px;
+  }
 }
 .containerInner {
   margin: 0 auto;
   max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .text {
   font-size: 1.6rem;
