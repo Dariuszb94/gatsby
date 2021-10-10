@@ -1,5 +1,5 @@
 import React from "react"
-import * as buttonStyles from "./button.module.css"
+import * as buttonStyles from "./button.module.scss"
 const button = () => {
   return (
     <section className={buttonStyles.container}>
