@@ -3,3 +3,17 @@
   height: 300px;
   width: 100%;
 }
+.container {
+  padding: 0 20px;
+}
+@media screen and (min-width: 800px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+.containerInner {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}

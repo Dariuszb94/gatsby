@@ -29,7 +29,7 @@ const HomePage = () => {
       <Header />
       <Slider />
       <Icons />
-      <Button />
+      {/* <Button /> */}
       <Footer />
     </main>
   )
