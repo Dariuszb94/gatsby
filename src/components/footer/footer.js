@@ -1,5 +1,5 @@
 import React from "react"
-import * as footerStyles from "./icons.module.css"
+import * as footerStyles from "./footer.module.css"
 const footer = () => {
   return <footer className={footerStyles.container}></footer>
 }

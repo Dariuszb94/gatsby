@@ -6,6 +6,7 @@ import "@fontsource/roboto"
 import Slider from "../components/slider/slider"
 import Icons from "../components/icons/icons"
 import Button from "../components/button/button"
+import Footer from "../components/footer/footer"
 
 const HomePage = () => {
   // const data = useStaticQuery(graphql`
@@ -29,7 +30,7 @@ const HomePage = () => {
       <Slider />
       <Icons />
       <Button />
-      <section></section>
+      <Footer />
     </main>
   )
 }
