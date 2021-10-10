@@ -5,6 +5,8 @@ import * as indexStyles from "./index.module.css"
 import "@fontsource/roboto"
 import Slider from "../components/slider/slider"
 import Icons from "../components/icons/icons"
+import Button from "../components/button/button"
+
 const HomePage = () => {
   // const data = useStaticQuery(graphql`
   //   {
@@ -26,6 +28,7 @@ const HomePage = () => {
       <Header />
       <Slider />
       <Icons />
+      <Button />
       <section></section>
     </main>
   )
