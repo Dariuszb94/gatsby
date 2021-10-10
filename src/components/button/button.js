@@ -9,9 +9,9 @@ const button = () => {
           Maecenas nisl sem, molestie sit amet felis ut, viverra euismod odio.
           Nunc velit massa, aliquet vel tristique at, posuere ac risus.
         </div>
-        <a href="#" className={buttonStyles.neonButton}>
+        {/* <a href="#" className={buttonStyles.neonButton}>
           Click here
-        </a>
+        </a> */}
       </div>
     </section>
   )
