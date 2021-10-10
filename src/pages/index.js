@@ -5,7 +5,7 @@ import * as indexStyles from "./index.module.css"
 import "@fontsource/roboto"
 import Slider from "../components/slider/slider"
 import Icons from "../components/icons/icons"
-import Button from "../components/button/button"
+// import Button from "../components/button/button"
 import Footer from "../components/footer/footer"
 
 const HomePage = () => {
