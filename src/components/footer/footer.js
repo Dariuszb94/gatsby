@@ -62,25 +62,25 @@ const Footer = () => {
                   <form
                     className={footerStyles.form}
                     onSubmit={async event => {
+                      // if (
+                      //   /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+                      //     mail
+                      //   )
+                      // ) {
                       event.preventDefault()
-                      if (
-                        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-                          mail
-                        )
-                      ) {
-                        setWrongEmail(false)
-                        createSubmission({
-                          variables: {
-                            clientMutationId: "example",
-                            name: name,
-                            number: number,
-                            mail: mail,
-                            message: message,
-                          },
-                        })
-                      } else {
-                        setWrongEmail(true)
-                      }
+                      //setWrongEmail(false)
+                      createSubmission({
+                        variables: {
+                          clientMutationId: "example",
+                          name: name,
+                          number: number,
+                          mail: mail,
+                          message: message,
+                        },
+                      })
+                      // } else {
+                      //   setWrongEmail(true)
+                      // }
                     }}
                   >
                     <input
@@ -134,11 +134,11 @@ const Footer = () => {
                       {!data ? "Send it!" : error ? "Try again!" : "Sent"}
                     </button>
                   </form>
-                  <div className={footerStyles.afterSend}>
-                    {loading && (
+                  {/* <div className={footerStyles.afterSend}>
+                     {loading && (
                       <div className={footerStyles.ldsHourglass}></div>
                     )}
-                  </div>
+                  </div> */}
                 </React.Fragment>
               )}
             </Mutation>
