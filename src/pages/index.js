@@ -60,77 +60,83 @@ const HomePage = () => {
       <Header />
       <Slider />
       <Icons />
-      <form
-        className={footerStyles.form}
-        onSubmit={async event => {
-          // if (
-          //   /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-          //     mail
-          //   )
-          // ) {
-          event.preventDefault()
-          //setWrongEmail(false)
-          createSubmission({
-            variables: {
-              clientMutationId: "example",
-              name: name,
-              number: number,
-              mail: mail,
-              message: message,
-            },
-          })
-          // } else {
-          //   setWrongEmail(true)
-          // }
-        }}
-      >
-        <input
-          value={name}
-          onChange={event => {
-            setName(event.target.value)
-          }}
-          className={footerStyles.input}
-          placeholder="Your name"
-        />
-        <input
-          value={number}
-          onChange={event => {
-            setNumber(event.target.value)
-          }}
-          className={footerStyles.input}
-          placeholder="Your number"
-        />
-        <input
-          id="mail"
-          value={mail}
-          onChange={event => {
-            setMail(event.target.value)
-          }}
-          className={wrongEmail ? footerStyles.wrongEmail : footerStyles.input}
-          placeholder="Your mail (required)"
-        />
-        <textarea
-          id="messageInput"
-          value={message}
-          onChange={event => {
-            setMessage(event.target.value)
-          }}
-          className={footerStyles.input}
-          placeholder="Your Message"
-        ></textarea>
-        <button
-          type="submit"
-          className={
-            !data
-              ? footerStyles.neonButton
-              : error
-              ? footerStyles.neonButtonError
-              : footerStyles.neonButtonSent
-          }
-        >
-          {!data ? "Send it!" : error ? "Try again!" : "Sent"}
-        </button>
-      </form>
+      {isBrowser && (
+        <Mutation mutation={CONTACT_MUTATION}>
+          <form
+            className={footerStyles.form}
+            onSubmit={async event => {
+              // if (
+              //   /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+              //     mail
+              //   )
+              // ) {
+              event.preventDefault()
+              //setWrongEmail(false)
+              createSubmission({
+                variables: {
+                  clientMutationId: "example",
+                  name: name,
+                  number: number,
+                  mail: mail,
+                  message: message,
+                },
+              })
+              // } else {
+              //   setWrongEmail(true)
+              // }
+            }}
+          >
+            <input
+              value={name}
+              onChange={event => {
+                setName(event.target.value)
+              }}
+              className={footerStyles.input}
+              placeholder="Your name"
+            />
+            <input
+              value={number}
+              onChange={event => {
+                setNumber(event.target.value)
+              }}
+              className={footerStyles.input}
+              placeholder="Your number"
+            />
+            <input
+              id="mail"
+              value={mail}
+              onChange={event => {
+                setMail(event.target.value)
+              }}
+              className={
+                wrongEmail ? footerStyles.wrongEmail : footerStyles.input
+              }
+              placeholder="Your mail (required)"
+            />
+            <textarea
+              id="messageInput"
+              value={message}
+              onChange={event => {
+                setMessage(event.target.value)
+              }}
+              className={footerStyles.input}
+              placeholder="Your Message"
+            ></textarea>
+            <button
+              type="submit"
+              className={
+                !data
+                  ? footerStyles.neonButton
+                  : error
+                  ? footerStyles.neonButtonError
+                  : footerStyles.neonButtonSent
+              }
+            >
+              {!data ? "Send it!" : error ? "Try again!" : "Sent"}
+            </button>
+          </form>
+        </Mutation>
+      )}
       <Button />
       <Footer />
     </main>
