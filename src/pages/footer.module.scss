@@ -1,0 +1,200 @@
+.container {
+  background-color: #e5e5e5;
+  width: 100%;
+  padding: 20px 20px 40px 20px;
+}
+
+.header {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  width: 100%;
+}
+.links {
+  margin: 0;
+}
+.input {
+  border: none;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 1);
+  border-radius: 4px;
+  padding: 8px;
+  outline: none;
+  max-width: 100%;
+  width: calc(100% - 16px);
+  resize: vertical;
+}
+.wrongEmail {
+  box-shadow: 0px 0px 12px 0px rgb(255, 9, 9);
+  border: none;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  padding: 8px;
+  outline: none;
+  max-width: 100%;
+  width: calc(100% - 16px);
+  resize: vertical;
+}
+.link {
+  font-size: 1.6rem;
+}
+::placeholder {
+  color: #5f5a5a;
+  font-size: 1.6rem;
+  font-family: "Roboto";
+}
+@media screen and (min-width: 800px) {
+  .container {
+    padding: 40px 20px 60px 20px;
+  }
+}
+.containerInner {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+$neon: black;
+$neonSend: green;
+$neonError: red;
+
+$bg: white;
+
+.neonButton {
+  font-size: 1.6rem;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: $neon;
+  border: $neon 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  box-shadow: inset 0 0 0.5em 0 $neon, 0 0 0.5em 0 $neon;
+  position: relative;
+  z-index: 1;
+}
+.neonButtonSent {
+  font-size: 1.6rem;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: $neonSend;
+  border: $neonSend 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  box-shadow: inset 0 0 0.5em 0 $neonSend, 0 0 0.5em 0 $neonSend;
+  position: relative;
+  z-index: 1;
+}
+.neonButtonError {
+  font-size: 1.6rem;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: $neonError;
+  border: $neonError 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  box-shadow: inset 0 0 0.5em 0 $neonError, 0 0 0.5em 0 $neonError;
+  position: relative;
+  z-index: 1;
+}
+.neonButton:hover {
+  color: white;
+}
+.neonButton::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: $neon;
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neonButton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em $neon;
+  opacity: 0;
+  background-color: $neon;
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neomButton:hover,
+.neonButton:focus {
+  color: $bg;
+  text-shadow: none;
+}
+
+.neonButton:hover::before,
+.neonButton:focus::before {
+  opacity: 1;
+}
+.neonButton:hover::after,
+.neonButton:focus::after {
+  opacity: 1;
+}
+
+.ldsHourglass {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.ldsHourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 20px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: ldsHourglass 1.2s infinite;
+}
+@keyframes ldsHourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+.success {
+  border: 4px solid green;
+  font-size: 1.6rem;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.error {
+  border: 4px solid red;
+  font-size: 1.6rem;
+  padding: 8px;
+  border-radius: 4px;
+}
+.afterSend {
+  display: grid;
+  place-items: center;
+}
