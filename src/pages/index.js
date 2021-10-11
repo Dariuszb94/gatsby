@@ -59,7 +59,7 @@ const HomePage = () => {
       <Icons />
       <Button />
       <Footer />
-      <Mutation mutation={CONTACT_MUTATION}>
+      {/* <Mutation mutation={CONTACT_MUTATION}>
         {(createSubmission, { loading, error, data }) => (
           <React.Fragment>
             <form
@@ -141,7 +141,7 @@ const HomePage = () => {
             </div>
           </React.Fragment>
         )}
-      </Mutation>
+      </Mutation> */}
     </main>
   )
 }
