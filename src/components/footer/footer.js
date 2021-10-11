@@ -63,7 +63,12 @@ const Footer = () => {
                     className={footerStyles.form}
                     onSubmit={async event => {
                       event.preventDefault()
-                      if (mail)
+                      if (
+                        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+                          mail
+                        )
+                      ) {
+                        setWrongEmail(false)
                         createSubmission({
                           variables: {
                             clientMutationId: "example",
@@ -73,7 +78,7 @@ const Footer = () => {
                             message: message,
                           },
                         })
-                      else {
+                      } else {
                         setWrongEmail(true)
                       }
                     }}
@@ -83,6 +88,7 @@ const Footer = () => {
                       onChange={event => {
                         setName(event.target.value)
                       }}
+                      className={footerStyles.input}
                       placeholder="Your name"
                     />
                     <input
@@ -90,15 +96,20 @@ const Footer = () => {
                       onChange={event => {
                         setNumber(event.target.value)
                       }}
+                      className={footerStyles.input}
                       placeholder="Your number"
                     />
                     <input
-                      id="favoriteFoodNameInput"
+                      id="mail"
                       value={mail}
                       onChange={event => {
                         setMail(event.target.value)
                       }}
-                      className={wrongEmail ? footerStyles.wrongEmail : null}
+                      className={
+                        wrongEmail
+                          ? footerStyles.wrongEmail
+                          : footerStyles.input
+                      }
                       placeholder="Your mail (required)"
                     />
                     <textarea
@@ -107,10 +118,20 @@ const Footer = () => {
                       onChange={event => {
                         setMessage(event.target.value)
                       }}
+                      className={footerStyles.input}
                       placeholder="Your Message"
                     ></textarea>
-                    <button type="submit" className={footerStyles.neonButton}>
-                      Send it!
+                    <button
+                      type="submit"
+                      className={
+                        !data
+                          ? footerStyles.neonButton
+                          : error
+                          ? footerStyles.neonButtonSent
+                          : footerStyles.neonButtonError
+                      }
+                    >
+                      {!data ? "Send it!" : error ? "Sent" : "Try again!"}
                     </button>
                   </form>
                   <div className={footerStyles.afterSend}>

@@ -17,8 +17,7 @@
 .links {
   margin: 0;
 }
-
-.form :is(input, textarea) {
+.input {
   border: none;
   margin-bottom: 20px;
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 1);
@@ -31,6 +30,14 @@
 }
 .wrongEmail {
   box-shadow: 0px 0px 12px 0px rgb(255, 9, 9);
+  border: none;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  padding: 8px;
+  outline: none;
+  max-width: 100%;
+  width: calc(100% - 16px);
+  resize: vertical;
 }
 .link {
   font-size: 1.6rem;
@@ -53,6 +60,9 @@
 }
 
 $neon: black;
+$neonSend: green;
+$neonError: red;
+
 $bg: white;
 
 .neonButton {
@@ -65,6 +75,32 @@ $bg: white;
   padding: 0.25em 1em;
   border-radius: 0.25em;
   box-shadow: inset 0 0 0.5em 0 $neon, 0 0 0.5em 0 $neon;
+  position: relative;
+  z-index: 1;
+}
+.neonButtonSent {
+  font-size: 1.6rem;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: $neonSend;
+  border: $neonSend 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  box-shadow: inset 0 0 0.5em 0 $neonSend, 0 0 0.5em 0 $neonSend;
+  position: relative;
+  z-index: 1;
+}
+.neonButtonError {
+  font-size: 1.6rem;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: $neonError;
+  border: $neonError 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  box-shadow: inset 0 0 0.5em 0 $neonError, 0 0 0.5em 0 $neonError;
   position: relative;
   z-index: 1;
 }
