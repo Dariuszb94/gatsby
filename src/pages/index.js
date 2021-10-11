@@ -1,6 +1,4 @@
 import * as React from "react"
-import { useState } from "react"
-import { useStaticQuery, graphq } from "gatsby"
 import { Header } from "../layout/header"
 import * as indexStyles from "./index.module.css"
 import "@fontsource/roboto"
