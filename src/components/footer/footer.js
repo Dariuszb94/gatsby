@@ -127,23 +127,17 @@ const Footer = () => {
                         !data
                           ? footerStyles.neonButton
                           : error
-                          ? footerStyles.neonButtonSent
-                          : footerStyles.neonButtonError
+                          ? footerStyles.nneonButtonError
+                          : footerStyles.neonButtonSent
                       }
                     >
-                      {!data ? "Send it!" : error ? "Sent" : "Try again!"}
+                      {!data ? "Send it!" : error ? "Try again!" : "Sent"}
                     </button>
                   </form>
                   <div className={footerStyles.afterSend}>
                     {loading && (
                       <div className={footerStyles.ldsHourglass}></div>
                     )}
-                    {error && (
-                      <p className={footerStyles.error}>
-                        An unknown error has occured, please try again later...
-                      </p>
-                    )}
-                    {data && <p className={footerStyles.success}>Sent</p>}
                   </div>
                 </React.Fragment>
               )}
