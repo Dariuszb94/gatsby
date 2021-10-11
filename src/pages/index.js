@@ -8,7 +8,7 @@ import * as indexStyles from "./index.module.css"
 import "@fontsource/roboto"
 import Slider from "../components/slider/slider"
 import Icons from "../components/icons/icons"
-// import Button from "../components/button/button"
+import Button from "../components/button/button"
 import Footer from "../components/footer/footer"
 
 const HomePage = () => {
@@ -33,17 +33,17 @@ const HomePage = () => {
   const CONTACT_MUTATION = gql`
     mutation CreateSubmissionMutation(
       $clientMutationId: String!
-      $firstName: String!
-      $lastName: String!
-      $favoriteFood: String!
+      $name: String!
+      $number: String!
+      $mail: String!
       $message: String!
     ) {
       createSubmission(
         input: {
           clientMutationId: $clientMutationId
-          firstName: $firstName
-          lastName: $lastName
-          favoriteFood: $favoriteFood
+          name: $name
+          number: $number
+          mail: $mail
           message: $message
         }
       ) {
@@ -57,7 +57,7 @@ const HomePage = () => {
       <Header />
       <Slider />
       <Icons />
-      {/* <Button /> */}
+      <Button />
       <Footer />
       <Mutation mutation={CONTACT_MUTATION}>
         {(createSubmission, { loading, error, data }) => (
@@ -68,9 +68,9 @@ const HomePage = () => {
                 createSubmission({
                   variables: {
                     clientMutationId: "example",
-                    firstName: firstNameValue,
-                    lastName: lastNameValue,
-                    favoriteFood: favoriteFoodValue,
+                    name: firstNameValue,
+                    number: lastNameValue,
+                    mail: favoriteFoodValue,
                     message: messageValue,
                   },
                 })
