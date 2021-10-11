@@ -1,7 +1,8 @@
 .container {
   background-color: #e5e5e5;
   width: 100%;
-  padding: 20px 20px 40px 20px;
+  padding: 20px 20px 80px 20px;
+  width: calc(100% - 40px);
 }
 
 .header {
@@ -11,7 +12,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  max-width: 200px;
+  max-width: 250px;
   width: 100%;
 }
 .links {
@@ -47,16 +48,14 @@
   font-size: 1.6rem;
   font-family: "Roboto";
 }
-@media screen and (min-width: 800px) {
-  .container {
-    padding: 40px 20px 60px 20px;
-  }
-}
+
 .containerInner {
   margin: 0 auto;
   max-width: 1200px;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
 $neon: black;
@@ -90,6 +89,7 @@ $bg: white;
   box-shadow: inset 0 0 0.5em 0 $neonSend, 0 0 0.5em 0 $neonSend;
   position: relative;
   z-index: 1;
+  pointer-events: none;
 }
 .neonButtonError {
   font-size: 1.6rem;
@@ -104,10 +104,11 @@ $bg: white;
   position: relative;
   z-index: 1;
 }
-.neonButton:hover {
+:is(.neonButton:hover, .neonButtonError:hover, .neonButtonSent:hover) {
   color: white;
 }
-.neonButton::before {
+
+:is(.neonButton, .neonButtonError, .neonButtonSent)::before {
   pointer-events: none;
   content: "";
   position: absolute;
@@ -116,12 +117,18 @@ $bg: white;
   left: 0;
   width: 100%;
   height: 100%;
-  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  transform: perspective(1em) rotateX(5deg) scale(1, 0.35);
   filter: blur(1em);
   opacity: 0.7;
 }
+.neonButtonError::before {
+  background: $neonError;
+}
+.neonButtonSent::before {
+  background: $neonSend;
+}
 
-.neonButton::after {
+:is(.neonButton, .neonButtonError, .neonButtonSent)::after {
   content: "";
   position: absolute;
   top: 0;
@@ -134,19 +141,26 @@ $bg: white;
   z-index: -1;
   transition: opacity 100ms linear;
 }
-
-.neomButton:hover,
-.neonButton:focus {
+.neonButtonError::after {
+  box-shadow: 0 0 2em 0.5em $neonError;
+  background-color: $neonError;
+}
+.neonButtonSent::after {
+  box-shadow: 0 0 2em 0.5em $neonSend;
+  background-color: $neonSend;
+}
+:is(.neonButton, .neonButtonSent, .neonButtonError):hover,
+:is(.neonButton, .neonButtonSent, .neonButtonError):focus {
   color: $bg;
   text-shadow: none;
 }
 
-.neonButton:hover::before,
-.neonButton:focus::before {
+:is(.neonButton, .neonButtonSent, .neonButtonError):hover::before,
+:is(.neonButton, .neonButtonSent, .neonButtonError):focus::before {
   opacity: 1;
 }
-.neonButton:hover::after,
-.neonButton:focus::after {
+:is(.neonButton, .neonButtonSent, .neonButtonError):hover::after,
+:is(.neonButton, .neonButtonSent, .neonButtonError):focus::after {
   opacity: 1;
 }
 
@@ -155,6 +169,7 @@ $bg: white;
   position: relative;
   width: 20px;
   height: 20px;
+  transform: translateY(-47%);
 }
 .ldsHourglass:after {
   content: " ";
@@ -164,7 +179,7 @@ $bg: white;
   height: 0;
   margin: 8px;
   box-sizing: border-box;
-  border: 20px solid #fff;
+  border: 10px solid #fff;
   border-color: #fff transparent #fff transparent;
   animation: ldsHourglass 1.2s infinite;
 }
@@ -197,4 +212,80 @@ $bg: white;
 .afterSend {
   display: grid;
   place-items: center;
+}
+@media screen and (min-width: 800px) {
+  .container {
+    padding: 40px 20px 100px 20px;
+  }
+  .containerInner {
+    flex-direction: row;
+    align-items: unset;
+  }
+}
+
+.checkbox {
+  display: grid;
+  grid-template-columns: min-content auto;
+  grid-gap: 0.5em;
+  font-size: 2rem;
+  color: black;
+
+  &--disabled {
+    color: #959495;
+  }
+}
+.checkboxWrong {
+  display: grid;
+  grid-template-columns: min-content auto;
+  grid-gap: 0.5em;
+  font-size: 2rem;
+  color: red;
+
+  &--disabled {
+    color: #959495;
+  }
+}
+.checkboxControl {
+  display: inline-grid;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.25em;
+  border: 0.1em solid currentColor;
+
+  svg {
+    transition: transform 0.1s ease-in 25ms;
+    transform: scale(0);
+    transform-origin: bottom left;
+  }
+}
+
+.checkboxInput {
+  display: grid;
+  grid-template-areas: "checkbox";
+
+  > * {
+    grid-area: checkbox;
+  }
+
+  input {
+    opacity: 0;
+    width: 1em;
+    height: 1em;
+
+    &:focus + .checkboxControl {
+      box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em currentColor;
+    }
+
+    &:checked + .checkboxControl svg {
+      transform: scale(1);
+    }
+
+    &:disabled + .checkboxControl {
+      color: #959495;
+    }
+  }
+}
+.radioLabel {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
 }

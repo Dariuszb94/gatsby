@@ -9,7 +9,9 @@ const Footer = () => {
   const [name, setName] = useState("")
   const [number, setNumber] = useState("")
   const [mail, setMail] = useState("")
+  const [checked, setChecked] = useState("")
   const [wrongEmail, setWrongEmail] = useState(false)
+  const [checkedWrong, setCheckedWrong] = useState(false)
   const [message, setMessage] = useState("")
   const CONTACT_MUTATION = gql`
     mutation CreateSubmissionMutation(
@@ -61,25 +63,33 @@ const Footer = () => {
                   <form
                     className={footerStyles.form}
                     onSubmit={async event => {
-                      // if (
-                      //   /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-                      //     mail
-                      //   )
-                      // ) {
                       event.preventDefault()
-                      //setWrongEmail(false)
-                      createSubmission({
-                        variables: {
-                          clientMutationId: "example",
-                          name: name,
-                          number: number,
-                          mail: mail,
-                          message: message,
-                        },
-                      })
-                      // } else {
-                      //   setWrongEmail(true)
-                      // }
+                      if (
+                        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+                          mail
+                        ) &&
+                        checked
+                      ) {
+                        setWrongEmail(false)
+                        setCheckedWrong(false)
+                        createSubmission({
+                          variables: {
+                            clientMutationId: "example",
+                            name: name,
+                            number: number,
+                            mail: mail,
+                            message: message,
+                          },
+                        })
+                      } else {
+                        if (
+                          !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+                            mail
+                          )
+                        )
+                          setWrongEmail(true)
+                        if (!checked) setCheckedWrong(true)
+                      }
                     }}
                   >
                     <input
@@ -103,6 +113,7 @@ const Footer = () => {
                       value={mail}
                       onChange={event => {
                         setMail(event.target.value)
+                        setWrongEmail(false)
                       }}
                       className={
                         wrongEmail
@@ -120,6 +131,45 @@ const Footer = () => {
                       className={footerStyles.input}
                       placeholder="Your Message"
                     ></textarea>
+                    <label
+                      className={
+                        !checkedWrong
+                          ? footerStyles.checkbox
+                          : footerStyles.checkboxWrong
+                      }
+                    >
+                      <span className={footerStyles.checkboxInput}>
+                        <input
+                          type="checkbox"
+                          name="checkbox"
+                          checked={checked}
+                          onChange={() => {
+                            setChecked(prev => !prev)
+                            setCheckedWrong(false)
+                          }}
+                        />
+                        <span className={footerStyles.checkboxControl}>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                            focusable="false"
+                          >
+                            <path
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="3"
+                              d="M1.73 12.91l6.37 6.37L22.79 4.59"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span className={footerStyles.radioLabel}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Vivamus feugiat suscipit velit non euismod. Mauris
+                        lacinia mauris ac semper maximus.
+                      </span>
+                    </label>
                     <button
                       type="submit"
                       className={
@@ -130,14 +180,22 @@ const Footer = () => {
                           : footerStyles.neonButtonSent
                       }
                     >
-                      {!data ? "Send it!" : error ? "Try again!" : "Sent"}
+                      {!data && !loading
+                        ? "Send it!"
+                        : error && !loading
+                        ? "Try again!"
+                        : !loading
+                        ? "Sent"
+                        : null}
+                      {loading ? (
+                        <div className={footerStyles.afterSend}>
+                          {loading && (
+                            <div className={footerStyles.ldsHourglass}></div>
+                          )}
+                        </div>
+                      ) : null}
                     </button>
                   </form>
-                  {/* <div className={footerStyles.afterSend}>
-                     {loading && (
-                      <div className={footerStyles.ldsHourglass}></div>
-                    )}
-                  </div> */}
                 </React.Fragment>
               )}
             </Mutation>
