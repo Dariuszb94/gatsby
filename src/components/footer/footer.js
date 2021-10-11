@@ -127,7 +127,7 @@ const Footer = () => {
                         !data
                           ? footerStyles.neonButton
                           : error
-                          ? footerStyles.nneonButtonError
+                          ? footerStyles.neonButtonError
                           : footerStyles.neonButtonSent
                       }
                     >
