@@ -7,10 +7,11 @@ import gql from "graphql-tag"
 const isBrowser = typeof window !== "undefined"
 
 const Footer = () => {
-  const [firstNameValue, setFirstNameValue] = useState("")
-  const [lastNameValue, setLastNameValue] = useState("")
-  const [favoriteFoodValue, setFavoriteFoodValue] = useState("")
-  const [messageValue, setMessageValue] = useState("")
+  const [name, setName] = useState("")
+  const [number, setNumber] = useState("")
+  const [mail, setMail] = useState("")
+  const [wrongEmail, setWrongEmail] = useState(false)
+  const [message, setMessage] = useState("")
   const CONTACT_MUTATION = gql`
     mutation CreateSubmissionMutation(
       $clientMutationId: String!
@@ -52,7 +53,7 @@ const Footer = () => {
             <li className={footerStyles.link}>Link3</li>
           </ul>
         </div>
-        <div className={footerStyles.formContainer}>
+        <div>
           <h3 className={footerStyles.header}>Contact us!</h3>
           {isBrowser && (
             <Mutation mutation={CONTACT_MUTATION}>
@@ -62,44 +63,49 @@ const Footer = () => {
                     className={footerStyles.form}
                     onSubmit={async event => {
                       event.preventDefault()
-                      createSubmission({
-                        variables: {
-                          clientMutationId: "example",
-                          name: firstNameValue,
-                          number: lastNameValue,
-                          mail: favoriteFoodValue,
-                          message: messageValue,
-                        },
-                      })
+                      if (mail)
+                        createSubmission({
+                          variables: {
+                            clientMutationId: "example",
+                            name: name,
+                            number: number,
+                            mail: mail,
+                            message: message,
+                          },
+                        })
+                      else {
+                        setWrongEmail(true)
+                      }
                     }}
                   >
                     <input
-                      value={firstNameValue}
+                      value={name}
                       onChange={event => {
-                        setFirstNameValue(event.target.value)
+                        setName(event.target.value)
                       }}
                       placeholder="Your name"
                     />
                     <input
-                      value={lastNameValue}
+                      value={number}
                       onChange={event => {
-                        setLastNameValue(event.target.value)
+                        setNumber(event.target.value)
                       }}
                       placeholder="Your number"
                     />
                     <input
                       id="favoriteFoodNameInput"
-                      value={favoriteFoodValue}
+                      value={mail}
                       onChange={event => {
-                        setFavoriteFoodValue(event.target.value)
+                        setMail(event.target.value)
                       }}
-                      placeholder="Your mail"
+                      className={wrongEmail ? footerStyles.wrongEmail : null}
+                      placeholder="Your mail (required)"
                     />
                     <textarea
                       id="messageInput"
-                      value={messageValue}
+                      value={message}
                       onChange={event => {
-                        setMessageValue(event.target.value)
+                        setMessage(event.target.value)
                       }}
                       placeholder="Your Message"
                     ></textarea>
