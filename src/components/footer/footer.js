@@ -1,6 +1,5 @@
 import React from "react"
 import { useState } from "react"
-
 import * as footerStyles from "./footer.module.scss"
 import { Mutation } from "react-apollo"
 import gql from "graphql-tag"
