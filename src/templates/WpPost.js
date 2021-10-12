@@ -1,6 +1,9 @@
 import React from "react"
 import { graphql, Link as GatsbyLink } from "gatsby"
 import { Helmet } from "react-helmet/es/Helmet"
+import { Header } from "../layout/header"
+import * as styles from "./post.module.css"
+import Footer from "../components/footer/footer"
 
 const WpPost = ({ data }) => {
   const { wpPost } = data
@@ -9,12 +12,14 @@ const WpPost = ({ data }) => {
       <Helmet>
         <meta name="description" content={wpPost?.seo?.metaDesc} />
       </Helmet>
+      <Header />
       <div>
         <h1>{wpPost.title}</h1>
         <div>
           <div dangerouslySetInnerHTML={{ __html: wpPost.content }} />
         </div>
         <GatsbyLink to="/">{`<< Back to Blog`}</GatsbyLink>
+        <Footer />
       </div>
     </>
   )
