@@ -1,3 +1,15 @@
+.title {
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+.text {
+  font-size: 1.6rem;
+}
+.container h2 {
+  font-size: 3rem;
+}
 .container {
   padding: 107px 20px 40px 20px;
 }

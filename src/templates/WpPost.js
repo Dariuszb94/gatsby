@@ -16,9 +16,12 @@ const WpPost = ({ data }) => {
       <div>
         <main className={styles.container}>
           <div className={styles.containerInner}>
-            <h1>{wpPost.title}</h1>
+            <h1 className={styles.title}>{wpPost.title}</h1>
             <div>
-              <div dangerouslySetInnerHTML={{ __html: wpPost.content }} />
+              <div
+                className={styles.text}
+                dangerouslySetInnerHTML={{ __html: wpPost.content }}
+              />
             </div>
             <GatsbyLink to="/">{`<< Back to Blog`}</GatsbyLink>
           </div>
