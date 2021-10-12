@@ -14,11 +14,15 @@ const WpPost = ({ data }) => {
       </Helmet>
       <Header />
       <div>
-        <h1>{wpPost.title}</h1>
-        <div>
-          <div dangerouslySetInnerHTML={{ __html: wpPost.content }} />
-        </div>
-        <GatsbyLink to="/">{`<< Back to Blog`}</GatsbyLink>
+        <main className={styles.container}>
+          <div className={styles.containerInner}>
+            <h1>{wpPost.title}</h1>
+            <div>
+              <div dangerouslySetInnerHTML={{ __html: wpPost.content }} />
+            </div>
+            <GatsbyLink to="/">{`<< Back to Blog`}</GatsbyLink>
+          </div>
+        </main>
         <Footer />
       </div>
     </>
