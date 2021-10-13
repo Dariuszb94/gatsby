@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 import { StaticImage } from "gatsby-plugin-image"
 
 export const PostImage = ({ src, alt, width }) => {
@@ -37,6 +36,7 @@ export const PostImage = ({ src, alt, width }) => {
     <StaticImage
       fluid={image.node.localFile.childImageSharp.fluid}
       alt={alt}
+      src={src}
       style={{
         width: width ? width + "px" : "100%",
         maxWidth: "100%",
