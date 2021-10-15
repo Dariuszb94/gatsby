@@ -25,9 +25,9 @@ const Slider = () => {
         <SwiperSlide>
           <StaticImage src="../../images/office_laptop.jpg" alt="A dinosaur" />
         </SwiperSlide>
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <StaticImage src="../../images/office_people.jpg" alt="A dinosaur" />
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </>
   )
