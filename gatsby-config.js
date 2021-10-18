@@ -30,6 +30,7 @@ module.exports = {
         },
         html: {
           useGatsbyImage: true,
+          imageMaxWidth: 24,
         },
       },
     },
