@@ -5,7 +5,7 @@ import { Header } from "../layout/header"
 import * as styles from "./post.module.css"
 import Footer from "../components/footer/footer"
 import parse from "html-react-parser"
-import PostImage from "../hooks/postImage"
+import { PostImage } from "../hooks/postImage"
 const WpPost = ({ data }) => {
   const { wpPost } = data
   const getImage = node => {

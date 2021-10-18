@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@apollo/client": "^3.4.16",
+    "@draftbox-co/gatsby-wordpress-inline-images": "^1.0.6",
     "@fontsource/roboto": "^4.5.0",
     "apollo-boost": "^0.4.9",
     "gatsby": "^3.13.0",
