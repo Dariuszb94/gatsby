@@ -37,6 +37,12 @@ module.exports = {
                   5000,
           },
         },
+        maxWidth: 650,
+        wrapperStyle: ``,
+        postTypes: ["post", "page"],
+        backgroundColor: `white`,
+        withWebp: true, // enable WebP files generation
+        useACF: false, // process <img> tags in ACF fields too
       },
     },
   ],
