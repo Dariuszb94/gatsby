@@ -10,6 +10,7 @@ module.exports = {
         url:
           // allows a fallback url if WPGRAPHQL_URL is not set in the env, this may be a local or remote WP instance.
           process.env.WPGRAPHQL_URL || `https://wp2.na.stronazen.pl/graphql`,
+        protocol: "https",
         schema: {
           //Prefixes all WP Types with "Wp" so "Post and allPost" become "WpPost and allWpPost".
           typePrefix: `Wp`,
@@ -22,7 +23,7 @@ module.exports = {
           {
             resolve: `@draftbox-co/gatsby-wordpress-inline-images`,
             options: {
-              baseUrl: `https://wp2.na.stronazen.pl/graphql`,
+              baseUrl: `https://wp2.na.stronazen.pl/graphqlg`,
               protocol: `https`,
             },
           },
