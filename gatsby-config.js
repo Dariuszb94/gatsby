@@ -22,7 +22,7 @@ module.exports = {
           {
             resolve: `@draftbox-co/gatsby-wordpress-inline-images`,
             options: {
-              baseUrl: `your-site.com`,
+              baseUrl: `https://wp2.na.stronazen.pl/graphql`,
               protocol: `https`,
             },
           },
