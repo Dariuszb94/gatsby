@@ -30,8 +30,8 @@ module.exports = {
         },
         html: {
           useGatsbyImage: true,
-          // imageMaxWidth: 24,
-          imageQuality: 90,
+          imageMaxWidth: 1920,
+          imageQuality: 70,
           createStaticFiles: true,
           generateWebpImages: true,
         },
