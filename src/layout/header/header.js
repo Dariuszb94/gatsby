@@ -4,7 +4,7 @@ import Logo from "./logo"
 import * as headerStyles from "./header.module.css"
 import useCurrentWidth from "../../hooks/useCurrentWidth"
 import { useState, useEffect } from "react"
-export const Header = () => {
+const Header = () => {
   const [mobile, setMobile] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
 
@@ -113,3 +113,4 @@ export const Header = () => {
     </header>
   )
 }
+export default Header
