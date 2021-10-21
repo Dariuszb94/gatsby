@@ -7,6 +7,7 @@ import Slider from "../components/home/slider/slider"
 import Icons from "../components/home/icons/icons"
 import Button from "../components/home/button/button"
 import Footer from "../layout/footer/footer"
+import Seo from "../layout/seo"
 const HomePage = () => {
   // const data = useStaticQuery(graphql`
   //   {
@@ -25,9 +26,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Helmet>
-        <meta name="description" content="blog" />
-      </Helmet>
+      <Seo />
       <main className={indexStyles.container}>
         <Header />
         <Slider />
