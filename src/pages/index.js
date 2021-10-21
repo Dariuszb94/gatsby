@@ -27,13 +27,14 @@ const HomePage = () => {
   return (
     <>
       <Seo title="Home" />
+      <Header />
+
       <main className={indexStyles.container}>
-        <Header />
         <Slider />
         <Icons />
         <Button />
-        <Footer />
       </main>
+      <Footer />
     </>
   )
 }
