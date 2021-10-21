@@ -7,6 +7,7 @@ import Footer from "../layout/footer/footer"
 const Blog = () => {
   return (
     <>
+      <Seo title="Blog" />
       <main>
         <Header />
         <Footer />

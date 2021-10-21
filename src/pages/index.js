@@ -26,7 +26,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Seo />
+      <Seo title="Home" />
       <main className={indexStyles.container}>
         <Header />
         <Slider />
