@@ -7,9 +7,6 @@ import Footer from "../layout/footer/footer"
 const Blog = () => {
   return (
     <>
-      <Helmet>
-        <meta name="description" content="blog" />
-      </Helmet>
       <main>
         <Header />
         <Footer />
