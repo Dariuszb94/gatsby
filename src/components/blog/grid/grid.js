@@ -1,6 +1,7 @@
 import React from "react"
 import * as styles from "./grid.module.css"
 import { useStaticQuery, graphql } from "gatsby"
+import { Link as GatsbyLink } from "gatsby"
 
 const Grid = () => {
   const data = useStaticQuery(graphql`
@@ -25,7 +26,11 @@ const Grid = () => {
     <section className={styles.container}>
       <ul>
         {data.allWpPost?.edges.map(item => {
-          return <li>{item.node.title}</li>
+          return (
+            <GatsbyLink className={styles.link} to={`/${item.node.slug}`}>
+              {item.node.title}
+            </GatsbyLink>
+          )
         })}
       </ul>
     </section>
