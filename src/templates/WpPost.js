@@ -4,7 +4,6 @@ import { Helmet } from "react-helmet/es/Helmet"
 import { Header } from "../layout/header"
 import * as styles from "./post.module.css"
 import Footer from "../components/footer/footer"
-import parse from "html-react-parser"
 const WpPost = ({ data }) => {
   const { wpPost } = data
   return (
@@ -24,7 +23,10 @@ const WpPost = ({ data }) => {
               />
             </div>
 
-            <GatsbyLink to="/">{`<< Back to Blog`}</GatsbyLink>
+            <GatsbyLink
+              className={styles.link}
+              to="/"
+            >{`<< Back to Blog`}</GatsbyLink>
           </div>
         </main>
         <Footer />
