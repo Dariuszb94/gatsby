@@ -8,9 +8,9 @@ const WpPost = ({ data }) => {
   const { wpPost } = data
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <meta name="description" content={wpPost?.seo?.metaDesc} />
-      </Helmet>
+      </Helmet> */}
       <Header />
       <div>
         <main className={styles.container}>
