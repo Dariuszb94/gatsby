@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Header } from "../layout/header"
+import { Header } from "../layout/header/header"
 import * as indexStyles from "./index.module.css"
 import "@fontsource/roboto"
 import Slider from "../components/slider/slider"

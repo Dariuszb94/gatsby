@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Logo from "./logo"
 import * as headerStyles from "./header.module.css"
-import useCurrentWidth from "../hooks/useCurrentWidth"
+import useCurrentWidth from "../../hooks/useCurrentWidth"
 import { useState, useEffect } from "react"
 export const Header = () => {
   const [mobile, setMobile] = useState(false)
