@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Header } from "../layout/header/header"
+import Header from "../layout/header/header"
 import * as indexStyles from "./index.module.css"
 import "@fontsource/roboto"
 import Slider from "../components/home/slider/slider"
@@ -23,13 +23,18 @@ const HomePage = () => {
   // const { allWpPost } = data
 
   return (
-    <main className={indexStyles.container}>
-      <Header />
-      <Slider />
-      <Icons />
-      <Button />
-      <Footer />
-    </main>
+    <>
+      <Helmet>
+        <meta name="description" content="blog" />
+      </Helmet>
+      <main className={indexStyles.container}>
+        <Header />
+        <Slider />
+        <Icons />
+        <Button />
+        <Footer />
+      </main>
+    </>
   )
 }
 

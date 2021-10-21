@@ -1,17 +1,20 @@
 import React from "react"
 import { Helmet } from "react-helmet/es/Helmet"
 
-import { Header } from "../layout/header/header"
-import { Footer } from "../layout/footer/footer"
+import Header from "../layout/header/header"
+import Footer from "../layout/footer/footer"
 
 const Blog = () => {
   return (
-    <main>
-      import {Helmet} from "react-helmet/es/Helmet"
-      <span>asdas</span>
-      <Header />
-      <Footer />
-    </main>
+    <>
+      <Helmet>
+        <meta name="description" content="blog" />
+      </Helmet>
+      <main>
+        <Header />
+        <Footer />
+      </main>
+    </>
   )
 }
 
