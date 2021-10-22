@@ -19,7 +19,7 @@ const Grid = () => {
                     gatsbyImageData(
                       formats: [AUTO, WEBP, AVIF]
                       placeholder: DOMINANT_COLOR
-                      width: 200
+                      width: 300
                     )
                   }
                 }

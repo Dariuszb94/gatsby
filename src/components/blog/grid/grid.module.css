@@ -26,7 +26,10 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 40px;
 }
 .tile {
-  max-width: 200px;
+  max-width: 257px;
 }
