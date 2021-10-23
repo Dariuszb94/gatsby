@@ -4,6 +4,8 @@ import * as footerStyles from "./footer.module.scss"
 import { Mutation } from "react-apollo"
 import gql from "graphql-tag"
 import { useStaticQuery, graphql } from "gatsby"
+import { Link as GatsbyLink } from "gatsby"
+
 const isBrowser = typeof window !== "undefined"
 
 const Footer = () => {
@@ -68,10 +70,19 @@ const Footer = () => {
       <div className={footerStyles.containerInner}>
         <div>
           <h3 className={footerStyles.header}>Latest posts:</h3>
-          <ul className={footerStyles.links}>
-            <li className={footerStyles.link}>Link1</li>
-            <li className={footerStyles.link}>Link2</li>
-            <li className={footerStyles.link}>Link3</li>
+          <ul>
+            {data.allWpPost?.edges.map(item => {
+              return (
+                <li>
+                  <GatsbyLink
+                    className={footerStyles.link}
+                    to={`/${item.node.slug}`}
+                  >
+                    {item.node.title}
+                  </GatsbyLink>
+                </li>
+              )
+            })}
           </ul>
         </div>
         <div>
