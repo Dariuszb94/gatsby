@@ -5,7 +5,6 @@ import { Mutation } from "react-apollo"
 import gql from "graphql-tag"
 import Logo from "../../layout/header/logo"
 const isBrowser = typeof window !== "undefined"
-
 const Footer = () => {
   const [name, setName] = useState("")
   const [number, setNumber] = useState("")
@@ -39,9 +38,9 @@ const Footer = () => {
   return (
     <footer className={footerStyles.container}>
       <div className={footerStyles.containerInner}>
-        <div>
+        <div className={footerStyles.column}>
           <h3 className={footerStyles.header}>Demo</h3>
-          <Logo />
+          <Logo className={footerStyles.logo} />
 
           <div className={footerStyles.text}>
             2300 Traverwood Dr.

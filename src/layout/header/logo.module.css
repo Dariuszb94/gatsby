@@ -1,5 +1,6 @@
 .logo {
   animation: slide-down 1.5s ease-in-out;
+  align-self: center;
 }
 
 @keyframes slide-down {
