@@ -52,7 +52,7 @@ const Footer = () => {
             Telefon: +1 734-332-6500
           </div>
         </div>
-        <div>
+        <div className={footerStyles.column}>
           <h3 className={footerStyles.header}>Links</h3>
           <ul>
             <li className={footerStyles.link}>Link1</li>
@@ -60,7 +60,7 @@ const Footer = () => {
             <li className={footerStyles.link}>Link3</li>
           </ul>
         </div>
-        <div>
+        <div className={footerStyles.column}>
           <h3 className={footerStyles.header}>Contact us!</h3>
           {isBrowser && (
             <Mutation mutation={CONTACT_MUTATION}>
