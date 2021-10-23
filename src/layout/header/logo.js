@@ -1,14 +1,15 @@
 import * as logoStyles from "./logo.module.css"
 import React from "react"
-import LogoImg from "../../images/demo-logo.png"
+import { StaticImage } from "gatsby-plugin-image"
+
 const Logo = () => {
   return (
-    <img
+    <StaticImage
       className={logoStyles.logo}
-      src={LogoImg}
+      src="../../images/demo-logo.png"
+      alt="Demo Logo"
       width="50"
       height="57"
-      alt="Demo Logo"
     />
   )
 }

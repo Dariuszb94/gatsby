@@ -3,9 +3,7 @@ import { useState } from "react"
 import * as footerStyles from "./footer.module.scss"
 import { Mutation } from "react-apollo"
 import gql from "graphql-tag"
-import { useStaticQuery, graphql } from "gatsby"
-import { Link as GatsbyLink } from "gatsby"
-
+import Logo from "../../layout/header/logo"
 const isBrowser = typeof window !== "undefined"
 
 const Footer = () => {
@@ -38,52 +36,22 @@ const Footer = () => {
       }
     }
   `
-  const data = useStaticQuery(graphql`
-    {
-      allWpPost {
-        edges {
-          node {
-            featuredImage {
-              node {
-                sourceUrl
-                altText
-                localFile {
-                  childImageSharp {
-                    gatsbyImageData(
-                      formats: [AUTO, WEBP, AVIF]
-                      placeholder: DOMINANT_COLOR
-                      width: 300
-                    )
-                  }
-                }
-              }
-            }
-            slug
-            title
-          }
-        }
-      }
-    }
-  `)
   return (
     <footer className={footerStyles.container}>
       <div className={footerStyles.containerInner}>
         <div>
-          <h3 className={footerStyles.header}>Latest posts:</h3>
-          <ul>
-            {data.allWpPost?.edges.map(item => {
-              return (
-                <li>
-                  <GatsbyLink
-                    className={footerStyles.link}
-                    to={`/${item.node.slug}`}
-                  >
-                    {item.node.title}
-                  </GatsbyLink>
-                </li>
-              )
-            })}
-          </ul>
+          <h3 className={footerStyles.header}>Demo</h3>
+          <Logo />
+
+          <div className={footerStyles.text}>
+            2300 Traverwood Dr.
+            <br />
+            Ann Arbor, MI 48105
+            <br />
+            Stany Zjednoczone
+            <br />
+            Telefon: +1 734-332-6500
+          </div>
         </div>
         <div>
           <h3 className={footerStyles.header}>Links</h3>
