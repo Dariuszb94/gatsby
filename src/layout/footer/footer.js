@@ -3,6 +3,7 @@ import { useState } from "react"
 import * as footerStyles from "./footer.module.scss"
 import { Mutation } from "react-apollo"
 import gql from "graphql-tag"
+import { useStaticQuery, graphql } from "gatsby"
 const isBrowser = typeof window !== "undefined"
 
 const Footer = () => {
@@ -35,11 +36,38 @@ const Footer = () => {
       }
     }
   `
+  const data = useStaticQuery(graphql`
+    {
+      allWpPost {
+        edges {
+          node {
+            featuredImage {
+              node {
+                sourceUrl
+                altText
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(
+                      formats: [AUTO, WEBP, AVIF]
+                      placeholder: DOMINANT_COLOR
+                      width: 300
+                    )
+                  }
+                }
+              }
+            }
+            slug
+            title
+          }
+        }
+      }
+    }
+  `)
   return (
     <footer className={footerStyles.container}>
       <div className={footerStyles.containerInner}>
         <div>
-          <h3 className={footerStyles.header}>Links</h3>
+          <h3 className={footerStyles.header}>Latest posts:</h3>
           <ul className={footerStyles.links}>
             <li className={footerStyles.link}>Link1</li>
             <li className={footerStyles.link}>Link2</li>
