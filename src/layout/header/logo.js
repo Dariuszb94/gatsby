@@ -8,8 +8,8 @@ const Logo = () => {
       className={logoStyles.logo}
       src="../../images/demo-logo.png"
       alt="Demo Logo"
-      width="50"
-      height="57"
+      width={50}
+      height={57}
     />
   )
 }

@@ -83,9 +83,12 @@ const Header = () => {
               }
             >
               <ul className={headerStyles.menu}>
-                {data.wpMenu?.menuItems.nodes.map(item => {
+                {data.wpMenu?.menuItems.nodes.map((item, index) => {
                   return (
-                    <li className={headerStyles.element}>
+                    <li
+                      key={getKey(item.label, index)}
+                      className={headerStyles.element}
+                    >
                       <a className={headerStyles.link} href={item.url}>
                         {item.label}
                       </a>
