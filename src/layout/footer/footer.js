@@ -71,7 +71,7 @@ const Footer = () => {
                     onSubmit={async event => {
                       event.preventDefault()
                       if (
-                        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+                        /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
                           mail
                         ) &&
                         checked
@@ -89,7 +89,7 @@ const Footer = () => {
                         })
                       } else {
                         if (
-                          !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+                          !/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
                             mail
                           )
                         )
