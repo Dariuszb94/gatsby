@@ -43,7 +43,6 @@ const Grid = () => {
                   <GatsbyImage
                     image={getImage(item.node.featuredImage.node.localFile)}
                     alt={item.node.featuredImage.node.altText}
-                    className={styles.bg}
                   />
                   <h2 className={styles.title}>{item.node.title}</h2>
                 </GatsbyLink>
