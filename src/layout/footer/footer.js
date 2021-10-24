@@ -40,7 +40,7 @@ const Footer = () => {
       <div className={footerStyles.containerInner}>
         <div className={footerStyles.column}>
           <h3 className={footerStyles.header}>Demo</h3>
-          <Logo className={footerStyles.logo} />
+          <Logo />
 
           <div className={footerStyles.text}>
             2300 Traverwood Dr.
