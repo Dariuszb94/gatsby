@@ -40,13 +40,13 @@ const Part = ({ color, d, toggle }) => {
   )
 }
 
-const Icons = () => {
+const Icons = ({ inView }) => {
   const [toggle, setToggle] = useState(false)
   useEffect(() => {
     setTimeout(() => {
-      setToggle(true)
+      setToggle(inView)
     }, 0)
-  }, [])
+  }, [inView])
 
   return (
     <div className={iconsStyles.iconContainer}>

@@ -14,13 +14,9 @@ const Icons = () => {
     <section ref={ref} className={iconsStyles.iconsGrid}>
       <h2 className={iconsStyles.header}>Check this out!</h2>
       <div className={iconsStyles.iconsGridInner}>
-        {inView && (
-          <>
-            <Star />
-            <RWD />
-            <Speed />
-          </>
-        )}
+        <Star inView={inView} />
+        <RWD inView={inView} />
+        <Speed inView={inView} />
       </div>
     </section>
   )
