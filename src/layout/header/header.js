@@ -3,10 +3,11 @@ import { useStaticQuery, graphql } from "gatsby"
 import Logo from "./logo"
 import * as headerStyles from "./header.module.css"
 import useCurrentWidth from "../../hooks/useCurrentWidth"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 const Header = () => {
   const [mobile, setMobile] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
+  const getKey = useCallback((str, idx) => encodeURI(`${str},${idx}`), [])
 
   let width = useCurrentWidth()
   const data = useStaticQuery(graphql`
@@ -97,9 +98,12 @@ const Header = () => {
         ) : (
           <nav>
             <ul className={headerStyles.menu}>
-              {data.wpMenu?.menuItems.nodes.map(item => {
+              {data.wpMenu?.menuItems.nodes.map((item, index) => {
                 return (
-                  <li className={headerStyles.element}>
+                  <li
+                    key={getKey(item.label, index)}
+                    className={headerStyles.element}
+                  >
                     <a className={headerStyles.link} href={item.url}>
                       {item.label}
                     </a>
