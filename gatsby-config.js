@@ -37,5 +37,20 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "@pasdo501/gatsby-source-woocommerce",
+      options: {
+        // Base URL of WordPress site
+        api: "wp2.na.stronazen.pl",
+        // true if using https. false otherwise.
+        https: true,
+        api_keys: {
+          consumer_key: `ck_d2732d8e5c9f5cdd7516a7b5646d61318bbefe34`,
+          consumer_secret: `cs_e92f3cb3a618b2d5654448dd015d0260e1356ac2`,
+        },
+        // Array of strings with fields you'd like to create nodes for...
+        fields: ["products", "products/categories", "products/attributes"],
+      },
+    },
   ],
 }
